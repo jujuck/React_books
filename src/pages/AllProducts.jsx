@@ -17,7 +17,7 @@ const AllProducts = () => {
   return (
     <div className="container">
       <h1>Mon application de recherche Black && Mortimer</h1>
-      <div>
+      <div className='filters'>
         <StatusFilter statusFilter={statusFilter} handleStatusFilter={setStatusFilter} />
       </div>
       <div className="actorsContainer">

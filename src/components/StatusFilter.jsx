@@ -12,6 +12,7 @@ const StatusFilter = ({ handleStatusFilter, statusFilter}) => {
 
   return (
     <div>
+    <label>Filtrer par status</label>
       <select
         name="status"
         id="status"
