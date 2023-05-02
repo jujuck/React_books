@@ -16,7 +16,7 @@ const Filter = ({ handleFilterValue, filtersValue, name}) => {
       <select
         name={name}
         id={name}
-        onChange={(event) => handleFilterValue(event.target.value)}
+        onChange={(event) => handleFilterValue(event.target.value, name)}
         value={filtersValue}
       >
         {filters.map(stat => <option key={stat.id} value={stat.label}>{stat.label}</option>)}

@@ -5,7 +5,13 @@ import './AllProducts.css'
 
 const AllProducts = () => {
   const [actors, setActors] = useState([]);
-  const [statusFilter, setStatusFilter] = useState("");
+  const [statusFilter, setStatusFilter] = useState({ status: "", species: ""});
+
+  const handleFilterValue = (value, name) => {
+    const newStatusFilter = { ...statusFilter }
+    newStatusFilter[name] = value;
+    setStatusFilter(newStatusFilter)
+  }
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/actors`)
@@ -19,19 +25,19 @@ const AllProducts = () => {
       <h1>Mon application de recherche Black && Mortimer</h1>
       <div className='filters'>
         <Filter
-          filtersValue={statusFilter}
-          handleFilterValue={setStatusFilter}
+          filtersValue={statusFilter.status}
+          handleFilterValue={handleFilterValue}
           name="status"
           />
         <Filter
-          filtersValue={statusFilter}
-          handleFilterValue={setStatusFilter}
+          filtersValue={statusFilter.species}
+          handleFilterValue={handleFilterValue}
           name="species"
           />
       </div>
       <div className="actorsContainer">
         {actors
-          .filter(actor => actor.status === statusFilter || statusFilter === "")
+          .filter(actor => actor.status === statusFilter.status || statusFilter.status === "")
           .map(actor => <ActorCard actor={actor} key={actor.id}/>)}
       </div>
     </div>
