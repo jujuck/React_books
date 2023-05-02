@@ -12,7 +12,7 @@ const AllProducts = () => {
   return (
     <div>
       <h1>Mon application de recherche Black && Mortimer</h1>
-      {console.log(actors)}
+      {actors.map(actor => <h3 key={actor.id}>{actor.name}</h3>)}
     </div>
   )
 }
