@@ -4,7 +4,9 @@ import StatusFilter from '../components/StatusFilter';
 import './AllProducts.css'
 
 const AllProducts = () => {
-  const [actors, setActors] = useState([])
+  const [actors, setActors] = useState([]);
+  const [statusFilter, setStatusFilter] = useState("");
+
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/actors`)
       .then(res => res.json())
@@ -16,7 +18,7 @@ const AllProducts = () => {
     <div className="container">
       <h1>Mon application de recherche Black && Mortimer</h1>
       <div>
-        <StatusFilter />
+        <StatusFilter statusFilter={statusFilter} handleStatusFilter={setStatusFilter} />
       </div>
       <div className="actorsContainer">
         {actors.map(actor => <ActorCard actor={actor} key={actor.id}/>)}
