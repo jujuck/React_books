@@ -37,7 +37,9 @@ const AllProducts = () => {
       </div>
       <div className="actorsContainer">
         {actors
-          .filter(actor => actor.status === statusFilter.status || statusFilter.status === "")
+          .filter(actor =>
+            (actor.status === statusFilter.status || statusFilter.status === "") &&
+            (actor.species === statusFilter.species || statusFilter.species === ""))
           .map(actor => <ActorCard actor={actor} key={actor.id}/>)}
       </div>
     </div>
