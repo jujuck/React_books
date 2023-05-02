@@ -1,10 +1,11 @@
-import './App.css'
+import './App.css';
+import AllProducts from './pages/AllProducts';
 
 function App() {
 
   return (
     <>
-      <h1>MOn application de recherche Black && Mortimer</h1>
+      <AllProducts />
     </>
   )
 }
