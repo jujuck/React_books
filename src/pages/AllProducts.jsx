@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import ActorCard from '../components/ActorCard'
 
 const AllProducts = () => {
   const [actors, setActors] = useState([])
@@ -12,7 +13,7 @@ const AllProducts = () => {
   return (
     <div>
       <h1>Mon application de recherche Black && Mortimer</h1>
-      {actors.map(actor => <h3 key={actor.id}>{actor.name}</h3>)}
+      {actors.map(actor => <ActorCard actor={actor} key={actor.id}/>)}
     </div>
   )
 }
