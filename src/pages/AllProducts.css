@@ -1,0 +1,13 @@
+.container {
+  margin: 0 15%;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.actorsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

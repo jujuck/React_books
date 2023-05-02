@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import ActorCard from '../components/ActorCard'
+import ActorCard from '../components/ActorCard';
+import './AllProducts.css'
 
 const AllProducts = () => {
   const [actors, setActors] = useState([])
@@ -11,9 +12,11 @@ const AllProducts = () => {
   }, [])
 
   return (
-    <div>
+    <div className="container">
       <h1>Mon application de recherche Black && Mortimer</h1>
-      {actors.map(actor => <ActorCard actor={actor} key={actor.id}/>)}
+      <div className="actorsContainer">
+        {actors.map(actor => <ActorCard actor={actor} key={actor.id}/>)}
+      </div>
     </div>
   )
 }
