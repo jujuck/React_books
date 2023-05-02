@@ -18,8 +18,16 @@ const AllProducts = () => {
     <div className="container">
       <h1>Mon application de recherche Black && Mortimer</h1>
       <div className='filters'>
-        <Filter filtersValue={statusFilter} handleFilterValue={setStatusFilter} />
-        <Filter filtersValue={statusFilter} handleFilterValue={setStatusFilter} />
+        <Filter
+          filtersValue={statusFilter}
+          handleFilterValue={setStatusFilter}
+          name="status"
+          />
+        <Filter
+          filtersValue={statusFilter}
+          handleFilterValue={setStatusFilter}
+          name="species"
+          />
       </div>
       <div className="actorsContainer">
         {actors

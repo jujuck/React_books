@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 
-const Filter = ({ handleFilterValue, filtersValue}) => {
+const Filter = ({ handleFilterValue, filtersValue, name}) => {
   const [filters, setFilters] = useState([])
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/status`)
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/${name}`)
       .then(res => res.json())
       .then(filter => setFilters(filter))
       .catch(err => console.error(err))
@@ -12,10 +12,10 @@ const Filter = ({ handleFilterValue, filtersValue}) => {
 
   return (
     <div>
-      <label>Filtrer par status</label>
+      <label>Filtrer par {name}</label>
       <select
-        name="status"
-        id="status"
+        name={name}
+        id={name}
         onChange={(event) => handleFilterValue(event.target.value)}
         value={filtersValue}
       >
