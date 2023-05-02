@@ -21,7 +21,9 @@ const AllProducts = () => {
         <StatusFilter statusFilter={statusFilter} handleStatusFilter={setStatusFilter} />
       </div>
       <div className="actorsContainer">
-        {actors.map(actor => <ActorCard actor={actor} key={actor.id}/>)}
+        {actors
+          .filter(actor => actor.status === statusFilter || statusFilter === "")
+          .map(actor => <ActorCard actor={actor} key={actor.id}/>)}
       </div>
     </div>
   )
