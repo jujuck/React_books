@@ -12,7 +12,12 @@ const StatusFilter = ({ handleStatusFilter, statusFilter}) => {
 
   return (
     <div>
-      <select name="status" id="status" onChange={(event) => handleStatusFilter(event.target.value)}>
+      <select
+        name="status"
+        id="status"
+        onChange={(event) => handleStatusFilter(event.target.value)}
+        value={statusFilter}
+      >
         {status.map(stat => <option key={stat.id} value={stat.label}>{stat.label}</option>)}
       </select>
     </div>
