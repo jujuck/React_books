@@ -11,7 +11,9 @@ const StatusFilter = () => {
 
   return (
     <div>
-      StatusFilter
+      <select name="status" id="status">
+        {status.map(stat => <option key={stat.id}>{stat.label}</option>)}
+      </select>
     </div>
   )
 }
