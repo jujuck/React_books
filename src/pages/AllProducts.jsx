@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import ActorCard from '../components/ActorCard';
-import StatusFilter from '../components/StatusFilter';
+import Filter from '../components/Filter';
 import './AllProducts.css'
 
 const AllProducts = () => {
@@ -18,7 +18,8 @@ const AllProducts = () => {
     <div className="container">
       <h1>Mon application de recherche Black && Mortimer</h1>
       <div className='filters'>
-        <StatusFilter statusFilter={statusFilter} handleStatusFilter={setStatusFilter} />
+        <Filter filtersValue={statusFilter} handleFilterValue={setStatusFilter} />
+        <Filter filtersValue={statusFilter} handleFilterValue={setStatusFilter} />
       </div>
       <div className="actorsContainer">
         {actors
