@@ -2,7 +2,7 @@ import React from 'react';
 import './ActorCard.css';
 
 const ActorCard = ({ actor }) => {
-  console.log(actor)
+
   return (
     <div className="actorCard">
       <h3>{actor.name}</h3>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import ActorCard from '../components/ActorCard';
+import StatusFilter from '../components/StatusFilter';
 import './AllProducts.css'
 
 const AllProducts = () => {
@@ -14,6 +15,9 @@ const AllProducts = () => {
   return (
     <div className="container">
       <h1>Mon application de recherche Black && Mortimer</h1>
+      <div>
+        <StatusFilter />
+      </div>
       <div className="actorsContainer">
         {actors.map(actor => <ActorCard actor={actor} key={actor.id}/>)}
       </div>
