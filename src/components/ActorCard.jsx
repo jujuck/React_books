@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import './ActorCard.css';
 
 const ActorCard = ({ actor }) => {
+  console.log(actor)
   return (
-    <h3>{actor.name}</h3>
+    <div className="actorCard">
+      <h3>{actor.name}</h3>
+      <img src={actor.image} alt={actor.name} />
+    </div>
+
   )
 }
 

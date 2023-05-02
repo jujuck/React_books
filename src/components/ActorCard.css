@@ -1,0 +1,13 @@
+.actorCard {
+  width: 15rem;
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+}
+
+.actorCard h3 {
+  text-align: center;
+}
+
+.actorCard img {
+  width: 100%;
+}
